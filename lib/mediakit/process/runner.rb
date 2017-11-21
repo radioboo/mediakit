@@ -96,7 +96,7 @@ module Mediakit
       end
 
       def teardown_watchers
-        @loop.watchers.each { |w| w.detach  if w.attached? }
+        @loop.watchers.each { |w| w.detach()  if w.attached? }
         @loop.stop if @loop.has_active_watchers?
       rescue RuntimeError => e
         logger.warn(e.message)
